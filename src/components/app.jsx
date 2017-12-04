@@ -16,15 +16,16 @@ class App extends Component {
   }
 
   search = (query) => {
-    giphy('1KMPHCBIOe3hOjJwCJQX49sRc6cM0oIm').search({
-      q: query,
-      rating: 'g',
-      limit: 10
-    }, (error, result) => {
-      this.setState({
-        gifs: result.data
+    giphy({ apiKey: '1KMPHCBIOe3hOjJwCJQX49sRc6cM0oIm', https: true })
+      .search({
+        q: query,
+        rating: 'g',
+        limit: 10
+      }, (error, result) => {
+        this.setState({
+          gifs: result.data
+        });
       });
-    });
   }
 
   selectGif = (id) => {
