@@ -1,9 +1,12 @@
+/* eslint jsx-a11y/alt-text: off */
+/* eslint jsx-a11y/no-noninteractive-element-interactions: off */
+
 import React, { Component } from 'react';
 
 class Gif extends Component {
   handleClick = () => {
-    if (typeof this.props.selectGif === "function") {
-      this.props.selectGif(this.props.id)
+    if (this.props.selectGif) {
+      this.props.selectGif(this.props.id);
     }
   }
 

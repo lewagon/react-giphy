@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import giphy from 'giphy-api';
 
-import SearchBar, { DEFAULT_SEARCH } from './search_bar.jsx';
-import Gif from './gif.jsx';
-import GifList from './gif_list.jsx';
+import SearchBar, { DEFAULT_SEARCH } from './search_bar';
+import Gif from './gif';
+import GifList from './gif_list';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       gifs: [],
       selectedGifId: "xT9IgDEI1iZyb2wqo8"
-    }
+    };
 
     this.search(DEFAULT_SEARCH);
   }
@@ -33,7 +33,7 @@ class App extends Component {
   selectGif = (id) => {
     this.setState({
       selectedGifId: id
-    })
+    });
   }
 
   render() {
