@@ -15,22 +15,21 @@ class App extends Component {
       gifs: [],
       selectedGifId: "xT9IgDEI1iZyb2wqo8"
     };
+    this.search = this.search.bind(this);
+    this.selectGif = this.selectGif.bind(this);
   }
 
-  search = (query) => {
-    giphy({ apiKey: GIPHY_API_KEY, https: true })
-      .search({
-        q: query,
-        rating: 'g',
-        limit: 10
-      }, (err, result) => {
-        this.setState({
-          gifs: result.data
-        });
-      });
+  search(query) {
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`
+    fetch(giphEndpoint).then(response => response.json()).then((data) => {
+      const gifs = data.data.map(giph => giph.id)
+      this.setState({
+        gifs: gifs
+      })
+    })
   }
 
-  selectGif = (id) => {
+  selectGif(id) {
     this.setState({
       selectedGifId: id
     });
