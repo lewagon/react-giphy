@@ -26,5 +26,21 @@ yarn lint
 To build and deploy your app to `gh-pages` branch on the GitHub repo:
 
 ```bash
-yarn deploy
+yarn build
 ```
+
+## Docker
+
+To build docker image:
+
+```bash
+docker build -t cats-image .
+```
+
+To run built docker image as a container under localhost:8001:
+
+```bash
+docker run -dp 8080:8080 cats-image
+```
+
+Go to: http://localhost:8001 to search for cat memes with giphy
