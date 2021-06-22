@@ -23,7 +23,7 @@
     "webpack-dev-server": "^2.8.1"
   },
   "dependencies": {
-    "giphy-api": "^1.2.7",
+    "giphy-api": "^2.0.1",
     "react": "16.0.0",
     "react-dom": "16.0.0"
   },
